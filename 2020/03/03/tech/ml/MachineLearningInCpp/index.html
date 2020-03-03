@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>从零开始C++深度学习 | 野有蔓草，零露瀼瀼</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言这篇文章原是我上学期的线代课的作业，后来添了一点东西又成了微积分作业，再后来又添了亿点东西又成了计导作业。现在再修修补补又是一篇博客(*￣ ▽ ￣*)ブ。 框架本文我们将只使用 STL 来实现一个最简单的手写数字识别（被誉为深度学习的 Hello world），之所以用简单的例子是因为难的我不会(～￣ ▽ ￣)～，或者也可以说是因为简单的例子比较能够看到问题的本质。 那么进入正题，我们首先列出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零开始C++深度学习">
+<meta property="og:url" content="http://shizuku.github.io/2020/03/03/tech/ml/MachineLearningInCpp/index.html">
+<meta property="og:site_name" content="野有蔓草，零露瀼瀼">
+<meta property="og:description" content="前言这篇文章原是我上学期的线代课的作业，后来添了一点东西又成了微积分作业，再后来又添了亿点东西又成了计导作业。现在再修修补补又是一篇博客(*￣ ▽ ￣*)ブ。 框架本文我们将只使用 STL 来实现一个最简单的手写数字识别（被誉为深度学习的 Hello world），之所以用简单的例子是因为难的我不会(～￣ ▽ ￣)～，或者也可以说是因为简单的例子比较能够看到问题的本质。 那么进入正题，我们首先列出">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-03T10:41:38.000Z">
+<meta property="article:modified_time" content="2020-03-03T14:38:24.710Z">
+<meta property="article:author" content="零露">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="野有蔓草，零露瀼瀼" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">野有蔓草，零露瀼瀼</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">零露的博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://shizuku.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-tech/ml/MachineLearningInCpp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/03/tech/ml/MachineLearningInCpp/" class="article-date">
+  <time datetime="2020-03-03T10:41:38.000Z" itemprop="datePublished">2020-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      从零开始C++深度学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这篇文章原是我上学期的线代课的作业，后来添了一点东西又成了微积分作业，再后来又添了亿点东西又成了计导作业。现在再修修补补又是一篇博客(*￣ ▽ ￣*)ブ。</p>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>本文我们将只使用 STL 来实现一个最简单的手写数字识别（被誉为深度学习的 Hello world），之所以用简单的例子是因为难的我不会(～￣ ▽ ￣)～，或者也可以说是因为简单的例子比较能够看到问题的本质。</p>
+<p>那么进入正题，我们首先列出一个框架，然后逢山开路，遇水造桥。我们知道深度学习涉及大量矩阵运算，因此我们首先需要实现一个矩阵类以表示矩阵及其运算。我们知道 python 中的线性代数库 numpy 的矩阵运算底层就是用 c 实现。一种实现是使用模板的，另一种是不使用模板的。两种实现各有利弊，如果使用模板将更符合数学的直觉——矩阵应该是不能随意改变形状的，并且许多行数和列数的匹配问题（比如矩阵乘法的行列匹配关系）可以在编译时发现；而不用模板的话可以更轻松地实现 reshape 的操作，并且可以更方便隐藏源代码。numpy 显然没有使用模板，而我当初写的时候没有考虑这么多，所以写成模板了(´。＿。｀)，然后就一直凑合用着。</p>
+<p>然后，我们需要读取数据，我们知道深度学习是基于大数据的，没有数据，什么都没有。本文例子所用的数据来自于：<a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">http://yann.lecun.com/exdb/mnist/</a></p>
+<p>如果做别的项目，互联网上其实也都有许多数据集可用使用，这就有待于聪明的你去发现了 o(*￣ ▽ ￣*)ブ。</p>
+<p>有了数据集我们还需要读取，然后做一些处理，因此我们需要实现一个 Reader 类来读取数据。</p>
+<p>之后，我们需要构建一个神经网络然后实现预测、训练等功能。</p>
+<p>然后就是 main 用来调度。</p>
+<p>那么本文以下的内容大概以此为主线展开：</p>
+<ul>
+<li>实现 la::matrix</li>
+<li>实现 Reader</li>
+<li>实现 Framework</li>
+<li>实现 main</li>
+</ul>
+<p>我实现的矩阵类放在名称空间 la（linear algebra）中，此外还包含全局的操作符重载和应用于矩阵的函数，而其它几个类并没有塞进名称空间里面，可能稍微有点违和。</p>
+<h2 id="实现-la-matrix"><a href="#实现-la-matrix" class="headerlink" title="实现 la::matrix"></a>实现 la::matrix</h2><p>我们知道 python 中的线性代数库 numpy 的矩阵运算底层就是用 C 实现。对于 C++的实现，我们有两种思路，一种实现是使用模板的，另一种是不使用模板的。两种实现各有利弊，如果使用模板将更符合数学的直觉——矩阵应该是不能随意改变形状的，并且许多行数和列数的匹配问题（比如矩阵乘法的行列匹配关系）可以在编译时发现；而不用模板的话可以更轻松地实现 reshape 的操作，并且可以更方便隐藏源代码。我所采用的是模板类的方式。</p>
+<p>为了方便管理，我们使用一维数组存储数据并提供 at 方法访问。为了应对不同的需求，诸如是否下标检查，是否 const 访问，提供四种 at 方法。为了防止堆栈空间不足而溢出，我们将其动态分配在堆上。<br>此外还可以提供迭代器以供快速迭代。<br>实现基本四则运算以及矩阵乘法，实现基本操作如转置，大多以操作符重载的形式实现。<br>此外还有一些杂乱的功能，例如适用于矩阵的函数，本例用到的其他矩阵操作等。</p>
+<p>以下为部分的代码。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> la &#123;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _M, <span class="keyword">size_t</span> _N, <span class="keyword">typename</span> _Ty = <span class="keyword">double</span>&gt;</span><br><span class="line">class matrix &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  matrix() &#123;...&#125;</span><br><span class="line">  matrix(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;_Ty&gt;&amp; a) &#123;...&#125;</span><br><span class="line">  matrix(<span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt;&amp; src) &#123;...&#125;</span><br><span class="line">  matrix(<span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt;&amp;&amp; src) <span class="keyword">noexcept</span>&#123;...&#125;</span><br><span class="line">  ~matrix() &#123; <span class="keyword">delete</span> [] head; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">const_iterator</span> &#123;</span>...&#125;;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">iterator</span> &#123;</span>...&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;...&#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">fill</span><span class="params">()</span> </span>&#123;...&#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">fill</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;_Ty&gt;&amp; a)</span> </span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">  <span class="function">_Ty&amp; <span class="title">at</span><span class="params">(<span class="keyword">size_t</span> m, <span class="keyword">size_t</span> n)</span> </span>&#123;...&#125;</span><br><span class="line">  <span class="function">_Ty&amp; <span class="title">fat</span><span class="params">(<span class="keyword">size_t</span> m, <span class="keyword">size_t</span> n)</span> </span>&#123;...&#125;</span><br><span class="line">  <span class="function"><span class="keyword">const</span> _Ty&amp; <span class="title">cat</span><span class="params">(<span class="keyword">size_t</span> m, <span class="keyword">size_t</span> n)</span> <span class="keyword">const</span> </span>&#123;...&#125;</span><br><span class="line">  <span class="function"><span class="keyword">const</span> _Ty&amp; <span class="title">fcat</span><span class="params">(<span class="keyword">size_t</span> m, <span class="keyword">size_t</span> n)</span> <span class="keyword">const</span> </span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">  <span class="function">_Ty <span class="title">sum</span><span class="params">()</span> </span>&#123;...&#125;</span><br><span class="line">  <span class="function"><span class="keyword">size_t</span> <span class="title">max_index</span><span class="params">()</span> </span>&#123;...&#125;</span><br><span class="line">  <span class="function">_Ty <span class="title">maximum</span><span class="params">()</span></span>&#123;...&#125;</span><br><span class="line">  inline const matrix&lt;_N, _M, _Ty&gt; transposition() const &#123;...&#125;</span><br><span class="line"></span><br><span class="line">  matrix&lt;_M, _N, _Ty&gt;&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt;&amp; src) &#123;...&#125;</span><br><span class="line">  <span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt; <span class="keyword">operator</span>+() <span class="keyword">const</span> &#123;...&#125;</span><br><span class="line">  <span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt; <span class="keyword">operator</span>-() <span class="keyword">const</span> &#123;...&#125;</span><br><span class="line">  <span class="keyword">const</span> matrix&lt;_N, _M, _Ty&gt; <span class="keyword">operator</span>~() <span class="keyword">const</span> &#123;...&#125;</span><br><span class="line">  matrix&lt;_M, _N, _Ty&gt;&amp; <span class="keyword">operator</span>+=(<span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt; src) &#123;...&#125;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">  matrix::iterator <span class="built_in">begin</span>() &#123;...&#125;</span><br><span class="line">  matrix::iterator <span class="built_in">end</span>() &#123;...&#125;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  _Ty* head;</span><br><span class="line">  _Ty* tail;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _A, <span class="keyword">size_t</span> _B, <span class="keyword">typename</span> _Ty&gt;</span><br><span class="line">la::matrix&lt;_A, _B, _Ty&gt; <span class="keyword">operator</span>+(<span class="keyword">const</span> la::matrix&lt;_A, _B, _Ty&gt;&amp; a, <span class="keyword">const</span> la::matrix&lt;_A, _B, _Ty&gt;&amp; b) &#123;...&#125;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _A, <span class="keyword">size_t</span> _B, <span class="keyword">size_t</span> _C, <span class="keyword">typename</span> _Ty&gt;</span><br><span class="line">la::matrix&lt;_A, _C, _Ty&gt; <span class="keyword">operator</span>%(<span class="keyword">const</span> la::matrix&lt;_A, _B, _Ty&gt;&amp; a, <span class="keyword">const</span> la::matrix&lt;_B, _C, _Ty&gt;&amp; b) &#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _A, <span class="keyword">size_t</span> _B, <span class="keyword">typename</span> _Ty&gt;</span><br><span class="line"><span class="built_in">std</span>::ostream&amp; <span class="keyword">operator</span>&lt;&lt;(<span class="built_in">std</span>::ostream&amp; ostr, <span class="keyword">const</span> la::matrix&lt;_A, _B, _Ty&gt;&amp; a) &#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _A, <span class="keyword">size_t</span> _B, <span class="keyword">size_t</span> _C, <span class="keyword">size_t</span> _D, <span class="keyword">typename</span> _Ty&gt;</span><br><span class="line">const la::matrix&lt;_A, _B, _Ty&gt; reshape(const la::matrix&lt;_C, _D, _Ty&gt;&amp; x) &#123;...&#125;</span><br><span class="line">...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实现-Reader"><a href="#实现-Reader" class="headerlink" title="实现 Reader"></a>实现 Reader</h2><p>根据(mnist)页面的描述，我们编写一个类来读取此数据集。</p>
+<p>根据描述，(img)数据的开头为四个 32 位(int)，我们将其读取并忽略。而(lab)数据开头为两个 32 位(int)，同样读取并忽略。如构造函数所示。</p>
+<p>img 数据为四位表示一个像素点，我们需要连续读取四个位并将其反转，读取这样的 784 个数字并且将其存储在矩阵中，然后返回。lab 数据只需要读取一个数字并返回即可。</p>
+<p>在(get_img)和(get_lab)函数中用(read)方法读取，(img)数据需要反转，所以添加(private)方法(reverse_32)。</p>
+<p>简略代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _M, <span class="keyword">size_t</span> _N&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Reader</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  Reader(<span class="built_in">std</span>::<span class="built_in">string</span> img, <span class="built_in">std</span>::<span class="built_in">string</span> lab) &#123;...&#125;</span><br><span class="line">  const la::matrix&lt;_M, _N&gt; get_img(const size_t index) &#123;...&#125;</span><br><span class="line">  <span class="function"><span class="keyword">const</span> <span class="keyword">char</span> <span class="title">get_lab</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> index)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="title">reverse_32</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> n)</span> </span>&#123;...&#125;</span><br><span class="line">  <span class="built_in">std</span>::ifstream img;</span><br><span class="line">  <span class="built_in">std</span>::ifstream lab;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实现-Framework"><a href="#实现-Framework" class="headerlink" title="实现 Framework"></a>实现 Framework</h2><p>接下来进行神经网络的实现，我们的神经网络非常简单，只有一个隐藏层，隐藏层也只有十个神经元。对此我们编写一个类实现。类包含 b0、(b1)、(w1)三个矩阵。此外还实现了预测(predict)和训练(train)的功能。</p>
+<p>在构造函数中我们随机初始化(w1)矩阵，随机区间为([-\sqrt{\frac{6}{28 \times 28 + 10}},\sqrt{\frac{6}{28 \times 28 + 10}}])，(b0)、(b1)则全部为 0。</p>
+<p>预测只需要根据式(5)进行即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">la::matrix&lt;1, 10&gt; NeuralNetwork::predict(const la::matrix&lt;1, 28 * 28&gt;&amp; in) &#123;</span><br><span class="line">  <span class="keyword">return</span> f2((((f1((in + b0))) % w1) + b1));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>训练需要以 train_batch 为单位进行，我们以 100 个数据为一组对神经网络进行调整，总共 600 组。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">NeuralNetwork::train</span><span class="params">(Reader&lt;size1, size1&gt;&amp; data)</span> </span>&#123;</span><br><span class="line">  la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; b0tmp&#123;&#125;;</span><br><span class="line">  la::matrix&lt;<span class="number">1</span>, size2&gt; b1tmp&#123;&#125;;</span><br><span class="line">  la::matrix&lt;size1 * size1, <span class="number">10</span>&gt; w1tmp&#123;&#125;;</span><br><span class="line">  <span class="keyword">int</span> lab&#123;&#125;;</span><br><span class="line">  la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; in&#123;&#125;;</span><br><span class="line">  la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; l0_in&#123;&#125;;</span><br><span class="line">  la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; l0_out&#123;&#125;;</span><br><span class="line">  la::matrix&lt;<span class="number">1</span>, size2&gt; l1_in&#123;&#125;;</span><br><span class="line">  la::matrix&lt;<span class="number">1</span>, size2&gt; l1_out&#123;&#125;;</span><br><span class="line">  la::matrix&lt;size2, <span class="number">1</span>&gt; act1&#123;&#125;;</span><br><span class="line">  la::matrix&lt;size2, <span class="number">1</span>&gt; grad_b1&#123;&#125;;</span><br><span class="line">  la::matrix&lt;size1 * size1, <span class="number">10</span>&gt; grad_w1&#123;&#125;;</span><br><span class="line">  la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; grad_b0&#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">600</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++) &#123;</span><br><span class="line">      lab = data.get_lab(<span class="number">0</span>);</span><br><span class="line">      in = la::reshape&lt;<span class="number">1</span>, size1 * size1&gt;(data.get_img(<span class="number">0</span>));</span><br><span class="line">      l0_in = in + b0;</span><br><span class="line">      l0_out = f1(l0_in);</span><br><span class="line">      l1_in = ((l0_out % w1) + b1);</span><br><span class="line">      l1_out = f2(l1_in);</span><br><span class="line">      act1 = (df2(l1_in) % ~(la::matrix&lt;<span class="number">1</span>, size2&gt;(identity(lab)) - l1_out));</span><br><span class="line">      grad_b1 = <span class="number">-2</span> * act1;</span><br><span class="line">      grad_w1 = <span class="number">-2</span> * la::outer(l0_out, ~act1);</span><br><span class="line">      grad_b0 = <span class="number">-2</span> * (df1(l0_in) * ~(w1 % act1));</span><br><span class="line">      b1tmp += ~grad_b1;</span><br><span class="line">      w1tmp += grad_w1;</span><br><span class="line">      b0tmp += grad_b0;</span><br><span class="line">    &#125;</span><br><span class="line">    b0 -= (b0tmp / <span class="number">100</span>) * learn_rate;</span><br><span class="line">    w1 -= (w1tmp / <span class="number">100</span>) * learn_rate;</span><br><span class="line">    b1 -= (b1tmp / <span class="number">100</span>) * learn_rate;</span><br><span class="line">    b0tmp.<span class="built_in">clear</span>();</span><br><span class="line">    w1tmp.<span class="built_in">clear</span>();</span><br><span class="line">    b1tmp.<span class="built_in">clear</span>();</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为类的声明：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">size_t</span> size1 = <span class="number">28</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">size_t</span> size2 = <span class="number">10</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NeuralNetwork</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  NeuralNetwork();</span><br><span class="line">  la::matrix&lt;1,10&gt; predict(const la::matrix&lt;1, 28 * 28&gt;&amp; in);</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">train</span><span class="params">(Reader&lt;size1, size1&gt;&amp; data)</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">train</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; img, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; lab)</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">save</span><span class="params">()</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; <span class="title">identity</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b = <span class="number">10</span>)</span></span>;</span><br><span class="line">  <span class="keyword">double</span> learn_rate;</span><br><span class="line">  la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; b0;</span><br><span class="line">  la::matrix&lt;<span class="number">1</span>, size2&gt; b1;</span><br><span class="line">  la::matrix&lt;size1 * size1, <span class="number">10</span>&gt; w1;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实现-main"><a href="#实现-main" class="headerlink" title="实现 main"></a>实现 main</h2><p>main 模块主要包含 main 函数调度和正确率计算功能。</p>
+<p>我们在 main 函数中实例化神经网络，并进行训练，分别输出训练前和训练后的证确率。代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  NeuralNetwork dm = NeuralNetwork();</span><br><span class="line"></span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; test(dm, test_img_filename, test_lab_filename) &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">  system(<span class="string">"pause"</span>);</span><br><span class="line"></span><br><span class="line">  dm.train(train_img_filename, train_lab_filename);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; test(dm, test_img_filename, test_lab_filename) &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">  system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>正确率计算并不困难，我们只需要对比期望的结果和实际的结果，并计数即可，代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">test</span><span class="params">(NeuralNetwork&amp; dm, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; img, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; lab)</span></span>&#123;</span><br><span class="line">  Reader&lt;size1, size1&gt; test(test_img_filename, test_lab_filename);</span><br><span class="line">  <span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">  <span class="function"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">num1</span><span class="params">(<span class="number">10</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">  <span class="function"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">num2</span><span class="params">(<span class="number">10</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; test_num; ++i) &#123;</span><br><span class="line">    <span class="keyword">auto</span> img_i = test.get_img(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> lab_i = (<span class="keyword">int</span>)test.get_lab(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">auto</span> rimg = dm.predict(la::reshape&lt;<span class="number">1</span>, <span class="number">28</span> * <span class="number">28</span>&gt;(img_i));</span><br><span class="line">    <span class="keyword">int</span> m = (<span class="keyword">int</span>)rimg.max_index();</span><br><span class="line">    <span class="keyword">if</span> (m == lab_i) &#123;</span><br><span class="line">      a++; b++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      b++;</span><br><span class="line">    &#125;</span><br><span class="line">    num1[m]++;</span><br><span class="line">    num2[lab_i]++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">double</span>(a) / <span class="keyword">double</span>(b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如图为实验的结果，虽然由于神经网络的结构过于简单，致使训练后的正确率并不高，但这样的结果也符合我们的预期。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://shizuku.github.io/2020/03/03/tech/ml/MachineLearningInCpp/" data-id="ck7c1btpj0000vlpgfify5h4f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">机器学习</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/03/tech/ml/MachineLearningInCpp/">从零开始C++深度学习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 零露<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
