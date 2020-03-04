@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>零露瀼瀼</title>
+  
+  <subtitle>零露的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://shizuku.github.io/"/>
+  <updated>2020-03-04T11:19:55.412Z</updated>
+  <id>http://shizuku.github.io/</id>
+  
+  <author>
+    <name>零露</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零开始C++深度学习</title>
+    <link href="http://shizuku.github.io/2020/03/03/tech/ml/MachineLearningInCpp/"/>
+    <id>http://shizuku.github.io/2020/03/03/tech/ml/MachineLearningInCpp/</id>
+    <published>2020-03-03T10:41:38.000Z</published>
+    <updated>2020-03-04T11:19:55.412Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;这篇文章原是我上学期的线代课的作业，后来添了一点东西又成了微积分作业，再后来又添了亿点东西又成了计导作业。现在再修修补补又是一篇博客(*￣
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://shizuku.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="http://shizuku.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="C++" scheme="http://shizuku.github.io/tags/C/"/>
+    
+  </entry>
+  
+</feed>
