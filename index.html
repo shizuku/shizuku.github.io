@@ -1,264 +1,719 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
 <head>
-  <meta charset="utf-8">
-  
+    <meta charset="utf-8">
+    <meta name="keywords" content="Android C++ Java">
+    <meta name="description" content="野有蔓草，零露漙兮。有美一人，清扬婉兮。邂逅相遇，适我愿兮。\n野有蔓草，零露瀼瀼。有美一人，婉如清扬。邂逅相遇，与子偕臧。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>野有蔓草，零露瀼瀼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
 
-  
-  <title>野有蔓草，零露瀼瀼</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="野有蔓草，零露漙兮。有美一人，清扬婉兮。邂逅相遇，适我愿兮。\n野有蔓草，零露瀼瀼。有美一人，婉如清扬。邂逅相遇，与子偕臧。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="野有蔓草，零露瀼瀼">
-<meta property="og:url" content="http://shizuku.github.io/index.html">
-<meta property="og:site_name" content="野有蔓草，零露瀼瀼">
-<meta property="og:description" content="野有蔓草，零露漙兮。有美一人，清扬婉兮。邂逅相遇，适我愿兮。\n野有蔓草，零露瀼瀼。有美一人，婉如清扬。邂逅相遇，与子偕臧。">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="零露">
-<meta property="article:tag" content="Android C++ Java">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="野有蔓草，零露瀼瀼" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">野有蔓草，零露瀼瀼</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">零露的博客</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://shizuku.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-tech/ml/MachineLearningInCpp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/03/tech/ml/MachineLearningInCpp/" class="article-date">
-  <time datetime="2020-03-03T10:41:38.000Z" itemprop="datePublished">2020-03-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </div>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">野有蔓草，零露瀼瀼</span>
+                </a>
+            </div>
+            
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/03/tech/ml/MachineLearningInCpp/">从零开始C++深度学习</a>
-    </h1>
-  
-
-      </header>
+  <li class="hide-on-med-and-down nav-item">
     
-    <div class="article-entry" itemprop="articleBody">
+    <a href="/" class="waves-effect waves-light">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这篇文章原是我上学期的线代课的作业，后来添了一点东西又成了微积分作业，再后来又添了亿点东西又成了计导作业。现在再修修补补又是一篇博客(*￣ ▽ ￣*)ブ。</p>
-<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>本文我们将只使用 STL 来实现一个最简单的手写数字识别（被誉为深度学习的 Hello world），之所以用简单的例子是因为难的我不会(～￣ ▽ ￣)～，或者也可以说是因为简单的例子比较能够看到问题的本质。</p>
-<p>那么进入正题，我们首先列出一个框架，然后逢山开路，遇水造桥。我们知道深度学习涉及大量矩阵运算，因此我们首先需要实现一个矩阵类以表示矩阵及其运算。我们知道 python 中的线性代数库 numpy 的矩阵运算底层就是用 c 实现。一种实现是使用模板的，另一种是不使用模板的。两种实现各有利弊，如果使用模板将更符合数学的直觉——矩阵应该是不能随意改变形状的，并且许多行数和列数的匹配问题（比如矩阵乘法的行列匹配关系）可以在编译时发现；而不用模板的话可以更轻松地实现 reshape 的操作，并且可以更方便隐藏源代码。numpy 显然没有使用模板，而我当初写的时候没有考虑这么多，所以写成模板了(´。＿。｀)，然后就一直凑合用着。</p>
-<p>然后，我们需要读取数据，我们知道深度学习是基于大数据的，没有数据就什么都没有。本文例子所用的数据来自于：<a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">http://yann.lecun.com/exdb/mnist/</a></p>
-<p>如果做别的项目，互联网上其实也都有许多数据集可用使用，这就有待于聪明的你去发现了 o(*￣ ▽ ￣*)ブ。</p>
-<p>有了数据集我们还需要读取，然后做一些处理，因此我们需要实现一个 Reader 类来读取数据。</p>
-<p>之后，我们需要构建一个神经网络然后实现预测、训练等功能。</p>
-<p>然后就是 main 用来调度。</p>
-<p>那么本文以下的内容大概以此为主线展开：</p>
-<ul>
-<li>实现 la::matrix</li>
-<li>实现 Reader</li>
-<li>实现 Framework</li>
-<li>实现 main</li>
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
 </ul>
-<p>我实现的矩阵类放在名称空间 la（linear algebra）中，此外还包含全局的操作符重载和应用于矩阵的函数，而其它几个类并没有塞进名称空间里面，可能稍微有点违和。</p>
-<h2 id="实现-la-matrix"><a href="#实现-la-matrix" class="headerlink" title="实现 la::matrix"></a>实现 la::matrix</h2><p>我们知道 python 中的线性代数库 numpy 的矩阵运算底层就是用 C 实现。对于 C++的实现，我们有两种思路，一种实现是使用模板的，另一种是不使用模板的。两种实现各有利弊，如果使用模板将更符合数学的直觉——矩阵应该是不能随意改变形状的，并且许多行数和列数的匹配问题（比如矩阵乘法的行列匹配关系）可以在编译时发现；而不用模板的话可以更轻松地实现 reshape 的操作，并且可以更方便隐藏源代码。我所采用的是模板类的方式。</p>
-<p>为了方便管理，我们使用一维数组存储数据并提供 at 方法访问。为了应对不同的需求，诸如是否下标检查，是否 const 访问，提供四种 at 方法。为了防止堆栈空间不足而溢出，我们将其动态分配在堆上。<br>此外还可以提供迭代器以供快速迭代。<br>实现基本四则运算以及矩阵乘法，实现基本操作如转置，大多以操作符重载的形式实现。<br>此外还有一些杂乱的功能，例如适用于矩阵的函数，本例用到的其他矩阵操作等。</p>
-<p>以下为部分的代码。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> la &#123;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _M, <span class="keyword">size_t</span> _N, <span class="keyword">typename</span> _Ty = <span class="keyword">double</span>&gt;</span><br><span class="line">class matrix &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    matrix() &#123;...&#125;</span><br><span class="line">    matrix(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;_Ty&gt;&amp; a) &#123;...&#125;</span><br><span class="line">    matrix(<span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt;&amp; src) &#123;...&#125;</span><br><span class="line">    matrix(<span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt;&amp;&amp; src) <span class="keyword">noexcept</span>&#123;...&#125;</span><br><span class="line">    ~matrix() &#123; <span class="keyword">delete</span> [] head; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">const_iterator</span> &#123;</span>...&#125;;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">iterator</span> &#123;</span>...&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;...&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fill</span><span class="params">()</span> </span>&#123;...&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fill</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;_Ty&gt;&amp; a)</span> </span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">_Ty&amp; <span class="title">at</span><span class="params">(<span class="keyword">size_t</span> m, <span class="keyword">size_t</span> n)</span> </span>&#123;...&#125;</span><br><span class="line">    <span class="function">_Ty&amp; <span class="title">fat</span><span class="params">(<span class="keyword">size_t</span> m, <span class="keyword">size_t</span> n)</span> </span>&#123;...&#125;</span><br><span class="line">    <span class="function"><span class="keyword">const</span> _Ty&amp; <span class="title">cat</span><span class="params">(<span class="keyword">size_t</span> m, <span class="keyword">size_t</span> n)</span> <span class="keyword">const</span> </span>&#123;...&#125;</span><br><span class="line">    <span class="function"><span class="keyword">const</span> _Ty&amp; <span class="title">fcat</span><span class="params">(<span class="keyword">size_t</span> m, <span class="keyword">size_t</span> n)</span> <span class="keyword">const</span> </span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">_Ty <span class="title">sum</span><span class="params">()</span> </span>&#123;...&#125;</span><br><span class="line">    <span class="function"><span class="keyword">size_t</span> <span class="title">max_index</span><span class="params">()</span> </span>&#123;...&#125;</span><br><span class="line">    <span class="function">_Ty <span class="title">maximum</span><span class="params">()</span></span>&#123;...&#125;</span><br><span class="line">    inline const matrix&lt;_N, _M, _Ty&gt; transposition() const &#123;...&#125;</span><br><span class="line"></span><br><span class="line">    matrix&lt;_M, _N, _Ty&gt;&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt;&amp; src) &#123;...&#125;</span><br><span class="line">    <span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt; <span class="keyword">operator</span>+() <span class="keyword">const</span> &#123;...&#125;</span><br><span class="line">    <span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt; <span class="keyword">operator</span>-() <span class="keyword">const</span> &#123;...&#125;</span><br><span class="line">    <span class="keyword">const</span> matrix&lt;_N, _M, _Ty&gt; <span class="keyword">operator</span>~() <span class="keyword">const</span> &#123;...&#125;</span><br><span class="line">    matrix&lt;_M, _N, _Ty&gt;&amp; <span class="keyword">operator</span>+=(<span class="keyword">const</span> matrix&lt;_M, _N, _Ty&gt; src) &#123;...&#125;</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    matrix::iterator <span class="built_in">begin</span>() &#123;...&#125;</span><br><span class="line">    matrix::iterator <span class="built_in">end</span>() &#123;...&#125;</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    _Ty* head;</span><br><span class="line">    _Ty* tail;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _A, <span class="keyword">size_t</span> _B, <span class="keyword">typename</span> _Ty&gt;</span><br><span class="line">la::matrix&lt;_A, _B, _Ty&gt; <span class="keyword">operator</span>+(<span class="keyword">const</span> la::matrix&lt;_A, _B, _Ty&gt;&amp; a, <span class="keyword">const</span> la::matrix&lt;_A, _B, _Ty&gt;&amp; b) &#123;...&#125;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _A, <span class="keyword">size_t</span> _B, <span class="keyword">size_t</span> _C, <span class="keyword">typename</span> _Ty&gt;</span><br><span class="line">la::matrix&lt;_A, _C, _Ty&gt; <span class="keyword">operator</span>%(<span class="keyword">const</span> la::matrix&lt;_A, _B, _Ty&gt;&amp; a, <span class="keyword">const</span> la::matrix&lt;_B, _C, _Ty&gt;&amp; b) &#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _A, <span class="keyword">size_t</span> _B, <span class="keyword">typename</span> _Ty&gt;</span><br><span class="line"><span class="built_in">std</span>::ostream&amp; <span class="keyword">operator</span>&lt;&lt;(<span class="built_in">std</span>::ostream&amp; ostr, <span class="keyword">const</span> la::matrix&lt;_A, _B, _Ty&gt;&amp; a) &#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _A, <span class="keyword">size_t</span> _B, <span class="keyword">size_t</span> _C, <span class="keyword">size_t</span> _D, <span class="keyword">typename</span> _Ty&gt;</span><br><span class="line">const la::matrix&lt;_A, _B, _Ty&gt; reshape(const la::matrix&lt;_C, _D, _Ty&gt;&amp; x) &#123;...&#125;</span><br><span class="line">...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="实现-Reader"><a href="#实现-Reader" class="headerlink" title="实现 Reader"></a>实现 Reader</h2><p>根据(mnist)页面的描述，我们编写一个类来读取此数据集。</p>
-<p>根据描述，(img)数据的开头为四个 32 位(int)，我们将其读取并忽略。而(lab)数据开头为两个 32 位(int)，同样读取并忽略。如构造函数所示。</p>
-<p>img 数据为四位表示一个像素点，我们需要连续读取四个位并将其反转，读取这样的 784 个数字并且将其存储在矩阵中，然后返回。lab 数据只需要读取一个数字并返回即可。</p>
-<p>在(get_img)和(get_lab)函数中用(read)方法读取，(img)数据需要反转，所以添加(private)方法(reverse_32)。</p>
-<p>简略代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">size_t</span> _M, <span class="keyword">size_t</span> _N&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Reader</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Reader(<span class="built_in">std</span>::<span class="built_in">string</span> img, <span class="built_in">std</span>::<span class="built_in">string</span> lab) &#123;...&#125;</span><br><span class="line">    const la::matrix&lt;_M, _N&gt; get_img(const size_t index) &#123;...&#125;</span><br><span class="line">    <span class="function"><span class="keyword">const</span> <span class="keyword">char</span> <span class="title">get_lab</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> index)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="title">reverse_32</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> n)</span> </span>&#123;...&#125;</span><br><span class="line">    <span class="built_in">std</span>::ifstream img;</span><br><span class="line">    <span class="built_in">std</span>::ifstream lab;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<div id="mobile-nav" class="side-nav sidenav">
 
-<h2 id="实现-Framework"><a href="#实现-Framework" class="headerlink" title="实现 Framework"></a>实现 Framework</h2><p>接下来进行神经网络的实现，我们的神经网络非常简单，只有一个隐藏层，隐藏层也只有十个神经元。对此我们编写一个类实现。类包含 b0、(b1)、(w1)三个矩阵。此外还实现了预测(predict)和训练(train)的功能。</p>
-<p>在构造函数中我们随机初始化(w1)矩阵，随机区间为([-\sqrt{\frac{6}{28 \times 28 + 10}},\sqrt{\frac{6}{28 \times 28 + 10}}])，(b0)、(b1)则全部为 0。</p>
-<p>预测只需要根据式(5)进行即可。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">la::matrix&lt;1, 10&gt; NeuralNetwork::predict(const la::matrix&lt;1, 28 * 28&gt;&amp; in) &#123;</span><br><span class="line">    <span class="keyword">return</span> f2((((f1((in + b0))) % w1) + b1));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>训练需要以 train_batch 为单位进行，我们以 100 个数据为一组对神经网络进行调整，总共 600 组。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">NeuralNetwork::train</span><span class="params">(Reader&lt;size1, size1&gt;&amp; data)</span> </span>&#123;</span><br><span class="line">    la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; b0tmp&#123;&#125;;</span><br><span class="line">    la::matrix&lt;<span class="number">1</span>, size2&gt; b1tmp&#123;&#125;;</span><br><span class="line">    la::matrix&lt;size1 * size1, <span class="number">10</span>&gt; w1tmp&#123;&#125;;</span><br><span class="line">    <span class="keyword">int</span> lab&#123;&#125;;</span><br><span class="line">    la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; in&#123;&#125;;</span><br><span class="line">    la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; l0_in&#123;&#125;;</span><br><span class="line">    la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; l0_out&#123;&#125;;</span><br><span class="line">    la::matrix&lt;<span class="number">1</span>, size2&gt; l1_in&#123;&#125;;</span><br><span class="line">    la::matrix&lt;<span class="number">1</span>, size2&gt; l1_out&#123;&#125;;</span><br><span class="line">    la::matrix&lt;size2, <span class="number">1</span>&gt; act1&#123;&#125;;</span><br><span class="line">    la::matrix&lt;size2, <span class="number">1</span>&gt; grad_b1&#123;&#125;;</span><br><span class="line">    la::matrix&lt;size1 * size1, <span class="number">10</span>&gt; grad_w1&#123;&#125;;</span><br><span class="line">    la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; grad_b0&#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">600</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++) &#123;</span><br><span class="line">            lab = data.get_lab(<span class="number">0</span>);</span><br><span class="line">            in = la::reshape&lt;<span class="number">1</span>, size1 * size1&gt;(data.get_img(<span class="number">0</span>));</span><br><span class="line">            l0_in = in + b0;</span><br><span class="line">            l0_out = f1(l0_in);</span><br><span class="line">            l1_in = ((l0_out % w1) + b1);</span><br><span class="line">            l1_out = f2(l1_in);</span><br><span class="line">            act1 = (df2(l1_in) % ~(la::matrix&lt;<span class="number">1</span>, size2&gt;(identity(lab)) - l1_out));</span><br><span class="line">            grad_b1 = <span class="number">-2</span> * act1;</span><br><span class="line">            grad_w1 = <span class="number">-2</span> * la::outer(l0_out, ~act1);</span><br><span class="line">            grad_b0 = <span class="number">-2</span> * (df1(l0_in) * ~(w1 % act1));</span><br><span class="line">            b1tmp += ~grad_b1;</span><br><span class="line">            w1tmp += grad_w1;</span><br><span class="line">            b0tmp += grad_b0;</span><br><span class="line">        &#125;</span><br><span class="line">        b0 -= (b0tmp / <span class="number">100</span>) * learn_rate;</span><br><span class="line">        w1 -= (w1tmp / <span class="number">100</span>) * learn_rate;</span><br><span class="line">        b1 -= (b1tmp / <span class="number">100</span>) * learn_rate;</span><br><span class="line">        b0tmp.<span class="built_in">clear</span>();</span><br><span class="line">        w1tmp.<span class="built_in">clear</span>();</span><br><span class="line">        b1tmp.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以下为类的声明：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">size_t</span> size1 = <span class="number">28</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">size_t</span> size2 = <span class="number">10</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NeuralNetwork</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    NeuralNetwork();</span><br><span class="line">    la::matrix&lt;1,10&gt; predict(const la::matrix&lt;1, 28 * 28&gt;&amp; in);</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">train</span><span class="params">(Reader&lt;size1, size1&gt;&amp; data)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">train</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; img, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; lab)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">save</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; <span class="title">identity</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b = <span class="number">10</span>)</span></span>;</span><br><span class="line">    <span class="keyword">double</span> learn_rate;</span><br><span class="line">    la::matrix&lt;<span class="number">1</span>, size1 * size1&gt; b0;</span><br><span class="line">    la::matrix&lt;<span class="number">1</span>, size2&gt; b1;</span><br><span class="line">    la::matrix&lt;size1 * size1, <span class="number">10</span>&gt; w1;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="实现-main"><a href="#实现-main" class="headerlink" title="实现 main"></a>实现 main</h2><p>main 模块主要包含 main 函数调度和正确率计算功能。</p>
-<p>我们在 main 函数中实例化神经网络，并进行训练，分别输出训练前和训练后的证确率。代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    NeuralNetwork dm = NeuralNetwork();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; test(dm, test_img_filename, test_lab_filename) &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line"></span><br><span class="line">    dm.train(train_img_filename, train_lab_filename);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; test(dm, test_img_filename, test_lab_filename) &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>正确率计算并不困难，我们只需要对比期望的结果和实际的结果，并计数即可，代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">test</span><span class="params">(NeuralNetwork&amp; dm, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; img, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; lab)</span></span>&#123;</span><br><span class="line">    Reader&lt;size1, size1&gt; test(test_img_filename, test_lab_filename);</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">num1</span><span class="params">(<span class="number">10</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">num2</span><span class="params">(<span class="number">10</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; test_num; ++i) &#123;</span><br><span class="line">        <span class="keyword">auto</span> img_i = test.get_img(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">int</span> lab_i = (<span class="keyword">int</span>)test.get_lab(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">auto</span> rimg = dm.predict(la::reshape&lt;<span class="number">1</span>, <span class="number">28</span> * <span class="number">28</span>&gt;(img_i));</span><br><span class="line">        <span class="keyword">int</span> m = (<span class="keyword">int</span>)rimg.max_index();</span><br><span class="line">        <span class="keyword">if</span> (m == lab_i) &#123;</span><br><span class="line">            a++; b++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            b++;</span><br><span class="line">        &#125;</span><br><span class="line">        num1[m]++;</span><br><span class="line">        num2[lab_i]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">double</span>(a) / <span class="keyword">double</span>(b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如图为实验的结果，虽然由于神经网络的结构过于简单，致使训练后的正确率并不高，但这样的结果也符合我们的预期。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://shizuku.github.io/2020/03/03/tech/ml/MachineLearningInCpp/" data-id="ck7ctocv500001zpg5k9ed9px" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-</section>
+    <div class="mobile-head bg-color">
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">机器学习</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-          <li>
-            <a href="/2020/03/03/tech/ml/MachineLearningInCpp/">从零开始C++深度学习</a>
-          </li>
-        
-      </ul>
+        <div class="logo-name">野有蔓草，零露瀼瀼</div>
+        <div class="logo-desc">
+            
+            野有蔓草，零露漙兮。有美一人，清扬婉兮。邂逅相遇，适我愿兮。\n野有蔓草，零露瀼瀼。有美一人，婉如清扬。邂逅相遇，与子偕臧。
+            
+        </div>
     </div>
-  </div>
 
-  
-</aside>
+    
+
+    <ul class="menu-list mobile-menu-list">
         
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 零露<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<style>
+    .carousel-control {
+        width: 45px;
+        height: 45px;
+        line-height: 55px;
+        border-radius: 45px;
+        background: transparent;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    #prev-cover {
+        position: absolute;
+        top: 48%;
+        left: 8px;
+    }
+
+    #next-cover {
+        position: absolute;
+        top: 48%;
+        right: 8px;;
+    }
+
+    #prev-cover i {
+        margin-right: 3px;
+    }
+
+    #next-cover i {
+        margin-left: 3px;
+    }
+
+    .carousel-control:hover {
+        background-color: rgba(0, 0, 0, .4);
+    }
+
+    .carousel-control i {
+        color: #fff;
+        font-size: 2.4rem;
+    }
+</style>
+
+
+
+<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
+    
+
+    <div class="carousel-item red white-text bg-cover about-cover">
+        <div class="container">
+            <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                零露的博客
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['野有蔓草，零露瀼瀼。',''],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
+
+
+
+            <div class="cover-btns">
+                <a href="#indexCard" class="waves-effect waves-light btn">
+                    <i class="fa fa-angle-double-down"></i>开始阅读
+                </a>
+
+                
+            </div>
+            <div class="cover-social-link">
+    <a href="https://github.com/shizuku" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2112165916@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2112165916" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2112165916" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script>
+    // TODO 此处的轮播尚需优化，PC/Mobile 在触摸切换时都感觉相当不灵活
+    $(function () {
+        let coverSlider = $('.carousel');
+
+        //用户触摸轮播自动 restartPlay 是否生效
+        let initUserPressedOrDraggedActive = false
+
+        //用户触摸轮播自动 restartPlay
+        function initUserPressedOrDragged(instance) {
+            setInterval(() => {
+                if (instance.pressed || instance.dragged) {
+                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
+                    restartPlay()
+                }
+            }, 1000)
+        }
+
+        coverSlider.carousel({
+            duration: Number('120'),
+            fullWidth: true,
+            indicators: 'true' === 'true',
+            onCycleTo() {
+                if (!initUserPressedOrDraggedActive) {
+                    // console.log('initUserPressedOrDraggedActive')
+                    initUserPressedOrDragged(this)
+                    initUserPressedOrDraggedActive = true
+                }
+            },
+        })
+
+        let carouselIntervalId;
+        
+        // Loop to call the next cover article picture.
+        let autoCarousel = function () {
+            carouselIntervalId = setInterval(function () {
+                coverSlider.carousel('next');
+            }, 5000);
+        };
+        autoCarousel();
+        
+
+        function restartPlay() {
+            
+            clearInterval(carouselIntervalId);
+            autoCarousel();
+            
+        };
+
+        
+        // prev and next cover post.
+        $('#prev-cover').click(function () {
+            coverSlider.carousel('prev');
+            restartPlay();
+        });
+        $('#next-cover').click(function () {
+            coverSlider.carousel('next');
+            restartPlay();
+        });
+        
+    });
+</script>
+
+
+
+<main class="content">
+
+    
+    <div id="indexCard" class="index-card">
+        <div class="container ">
+            <div class="card">
+                <div class="card-content">
+                    
+
+                    
+
+                    
+
+                    
+                    <div id="recommend-sections" class="recommend">
+                        
+
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/03/03/tech/ml/MachineLearningInCpp/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="从零开始C++深度学习">
+                            
+                            <span class="card-title">从零开始C++深度学习</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前言这篇文章原是我上学期的线代课的作业，后来添了一点东西又成了微积分作业，再后来又添了亿点东西又成了计导作业。现在再修修补补又是一篇博客(*￣ ▽ ￣*)ブ。
+框架本文我们将只使用 STL 来实现一个最简单的手写数字识别（被誉为深度学习的 
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-03
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                            <span class="chip bg-color">机器学习</span>
+                        </a>
+                        
+                        <a href="/tags/C/">
+                            <span class="chip bg-color">C++</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="521015110"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.6'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="http://shizuku.github.io" target="_blank">零露</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "3";
+                    var startDate = "4";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/shizuku" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2112165916@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2112165916" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2112165916" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
 </footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    
 
+    
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
 
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+    
 
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
 
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
 </body>
+
 </html>
