@@ -47,7 +47,7 @@ categories: "机器学习"
 
 以下为部分的代码。
 
-```c++
+```C++
 namespace la {
 template<size_t _M, size_t _N, typename _Ty = double>
 class matrix {
@@ -119,7 +119,7 @@ img 数据为四位表示一个像素点，我们需要连续读取四个位并�
 
 简略代码如下：
 
-```c++
+```C++
 template<size_t _M, size_t _N>
 class Reader {
 public:
@@ -141,7 +141,7 @@ private:
 
 预测只需要根据式(5)进行即可。
 
-```c++
+```C++
 la::matrix<1, 10> NeuralNetwork::predict(const la::matrix<1, 28 * 28>& in) {
     return f2((((f1((in + b0))) % w1) + b1));
 }
@@ -149,7 +149,7 @@ la::matrix<1, 10> NeuralNetwork::predict(const la::matrix<1, 28 * 28>& in) {
 
 训练需要以 train_batch 为单位进行，我们以 100 个数据为一组对神经网络进行调整，总共 600 组。
 
-```c++
+```C++
 void NeuralNetwork::train(Reader<size1, size1>& data) {
     la::matrix<1, size1 * size1> b0tmp{};
     la::matrix<1, size2> b1tmp{};
@@ -193,7 +193,7 @@ void NeuralNetwork::train(Reader<size1, size1>& data) {
 
 以下为类的声明：
 
-```c++
+```C++
 const size_t size1 = 28;
 const size_t size2 = 10;
 class NeuralNetwork {
@@ -219,7 +219,7 @@ main 模块主要包含 main 函数调度和正确率计算功能。
 
 我们在 main 函数中实例化神经网络，并进行训练，分别输出训练前和训练后的证确率。代码如下：
 
-```c++
+```C++
 int main() {
     NeuralNetwork dm = NeuralNetwork();
 
@@ -235,7 +235,7 @@ int main() {
 
 正确率计算并不困难，我们只需要对比期望的结果和实际的结果，并计数即可，代码如下：
 
-```c++
+```C++
 double test(NeuralNetwork& dm, const std::string& img, const std::string& lab){
     Reader<size1, size1> test(test_img_filename, test_lab_filename);
     int a = 0, b = 0;
