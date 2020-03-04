@@ -15,7 +15,7 @@
 <meta property="og:description" content="前言这篇文章原是我上学期的线代课的作业，后来添了一点东西又成了微积分作业，再后来又添了亿点东西又成了计导作业。现在再修修补补又是一篇博客(*￣ ▽ ￣*)ブ。 框架本文我们将只使用 STL 来实现一个最简单的手写数字识别（被誉为深度学习的 Hello world），之所以用简单的例子是因为难的我不会(～￣ ▽ ￣)～，或者也可以说是因为简单的例子比较能够看到问题的本质。 那么进入正题，我们首先列出">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-03T10:41:38.000Z">
-<meta property="article:modified_time" content="2020-03-03T15:40:34.663Z">
+<meta property="article:modified_time" content="2020-03-04T02:03:31.271Z">
 <meta property="article:author" content="零露">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="C++">
@@ -101,7 +101,7 @@
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这篇文章原是我上学期的线代课的作业，后来添了一点东西又成了微积分作业，再后来又添了亿点东西又成了计导作业。现在再修修补补又是一篇博客(*￣ ▽ ￣*)ブ。</p>
 <h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>本文我们将只使用 STL 来实现一个最简单的手写数字识别（被誉为深度学习的 Hello world），之所以用简单的例子是因为难的我不会(～￣ ▽ ￣)～，或者也可以说是因为简单的例子比较能够看到问题的本质。</p>
 <p>那么进入正题，我们首先列出一个框架，然后逢山开路，遇水造桥。我们知道深度学习涉及大量矩阵运算，因此我们首先需要实现一个矩阵类以表示矩阵及其运算。我们知道 python 中的线性代数库 numpy 的矩阵运算底层就是用 c 实现。一种实现是使用模板的，另一种是不使用模板的。两种实现各有利弊，如果使用模板将更符合数学的直觉——矩阵应该是不能随意改变形状的，并且许多行数和列数的匹配问题（比如矩阵乘法的行列匹配关系）可以在编译时发现；而不用模板的话可以更轻松地实现 reshape 的操作，并且可以更方便隐藏源代码。numpy 显然没有使用模板，而我当初写的时候没有考虑这么多，所以写成模板了(´。＿。｀)，然后就一直凑合用着。</p>
-<p>然后，我们需要读取数据，我们知道深度学习是基于大数据的，没有数据，什么都没有。本文例子所用的数据来自于：<a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">http://yann.lecun.com/exdb/mnist/</a></p>
+<p>然后，我们需要读取数据，我们知道深度学习是基于大数据的，没有数据就什么都没有。本文例子所用的数据来自于：<a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">http://yann.lecun.com/exdb/mnist/</a></p>
 <p>如果做别的项目，互联网上其实也都有许多数据集可用使用，这就有待于聪明的你去发现了 o(*￣ ▽ ￣*)ブ。</p>
 <p>有了数据集我们还需要读取，然后做一些处理，因此我们需要实现一个 Reader 类来读取数据。</p>
 <p>之后，我们需要构建一个神经网络然后实现预测、训练等功能。</p>
@@ -149,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://shizuku.github.io/2020/03/03/tech/ml/MachineLearningInCpp/" data-id="ck7c2a51i00004gpg2n4cb6c8" class="article-share-link">Share</a>
+      <a data-url="http://shizuku.github.io/2020/03/03/tech/ml/MachineLearningInCpp/" data-id="ck7ctocv500001zpg5k9ed9px" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
