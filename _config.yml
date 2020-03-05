@@ -57,7 +57,7 @@ prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
   theme: 'tomorrow'
   line_number: true    # default false
-  custom_css: /css/prism-shades-of-purple.css
+  custom_css: #/css/prism-shades-of-purple.css
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -115,7 +115,7 @@ deploy:
 lazyload:
   enable: true 
   onlypost: false  # 是否只对文章的图片做懒加载
-  loadingImg: # eg ./images/loading.gif
+  loadingImg: /images/loading.gif
 
 search:
   path: search.xml
