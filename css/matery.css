@@ -92,7 +92,7 @@ hr {
 }
 
 blockquote {
-    border-left: 5px solid #42b983;
+    border-left: 5px solid #f06292;
     padding: 1rem 0.8rem 0.2rem 0.8rem;
     color: #666;
     background-color: rgba(66, 185, 131, .1);
@@ -180,7 +180,7 @@ code {
     right: 0px;
     filter: invert(50%);
     padding: 7px;
-    z-index: 999 !important;
+    z-index: 2 !important;
     cursor: pointer;
     transition: all .3s;
     transform: rotate(0deg);
@@ -885,7 +885,7 @@ article a {
 
 article a:hover {
     font-weight: bold;
-    color: #42b983;
+    color: #f06292;
     text-decoration: underline;
 }
 
@@ -1068,7 +1068,7 @@ article .article-tags .chip {
     border-radius: 15px;
     margin-right: 5px;
     margin-bottom: 2px;
-    color: #42b983;
+    color: #f06292;
     background: #fff;
     border: 1px solid;
     transition: all 0.6s ease-in-out;
@@ -1076,17 +1076,17 @@ article .article-tags .chip {
 
 #artDetail .tag_share .article-tag .chip:hover {
     color: #fff;
-    background: #42b983;
+    background: #f06292;
 }
 
 #artDetail .post-cate {
     float: right;
-    color: #42b983;
+    color: #f06292;
 }
 
 #artDetail .post-cate a {
     padding-right: 5px;
-    color: #42b983;
+    color: #f06292;
     font-weight: 500;
 }
 
@@ -1105,7 +1105,7 @@ article .article-tags .chip {
 
 #artDetail .post-info .post-category:hover {
     font-weight: bold;
-    color: #42b983;
+    color: #f06292;
     text-decoration: underline;
 }
 
@@ -1165,7 +1165,7 @@ article .article-tags .chip {
 
 #artDetail .reprint a {
     font-size: 1.05rem;
-    color: #42b983;
+    color: #f06292;
     font-weight: 500;
 }
 
@@ -1181,7 +1181,7 @@ article .article-tags .chip {
 
 #articleContent a {
     padding: 0 2px;
-    color: #42b983;
+    color: #f06292;
     font-weight: 500;
     text-decoration: underline;
     word-wrap: break-word;
@@ -1601,7 +1601,7 @@ thead {
 }
 
 .post-statis .statis .count a {
-    color: #42b983;
+    color: #f06292;
 }
 
 .post-statis .statis .name {
@@ -1622,8 +1622,8 @@ thead {
     margin: 0 0.5rem;
     padding: 0;
     color: #fff;
-    border: 1px solid #0f9d58;
-    background: radial-gradient(#4cbf30, #0f9d58);
+    border: 1px solid #f06292;
+    background: radial-gradient(#ff94c2, #f06292);
     font-size: 0.9rem;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .21), 0 2px 3px rgba(0, 0, 0, .1);
@@ -1866,7 +1866,7 @@ footer .copy-right {
 
 .search-result-list .search-result-title {
     font-size: 1.4rem;
-    color: #42b983;
+    color: #f06292;
 }
 
 .search-result-list li {
