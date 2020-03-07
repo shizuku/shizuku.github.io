@@ -397,9 +397,9 @@
 <li>实现 main</li>
 </ul>
 <p>我实现的矩阵类放在名称空间 <code>la</code>（linear algebra）中，此外还包含全局的操作符重载和应用于矩阵的函数，而其它几个类并没有塞进名称空间里面，可能稍微有点违和。</p>
-<h2 id="实现-la-matrix"><a href="#实现-la-matrix" class="headerlink" title="实现 la::matrix"></a>实现 la::matrix</h2><p>我们知道 python 中的线性代数库 <code>numpy</code> 的矩阵运算底层就是用 C 实现。对于 C++的实现，我们有两种思路，一种实现是使用模板的，另一种是不使用模板的。两种实现各有利弊，如果使用模板将更符合数学的直觉——矩阵应该是不能随意改变形状的，并且许多行数和列数的匹配问题（比如矩阵乘法的行列匹配关系）可以在编译时发现；而不用模板的话可以更轻松地实现 <code>reshape</code> 的操作，并且可以更方便隐藏源代码。我所采用的是模板类的方式。</p>
+<h2 id="实现-la-matrix"><a href="#实现-la-matrix" class="headerlink" title="实现 la::matrix"></a>实现 la::matrix</h2><p>我们知道 python 中的线性代数库 <code>numpy</code> 的矩阵运算底层就是用 C 实现。对于 C++的实现，我们有两种思路，一种实现是使用模板的，另一种是不使用模板的。两种实现各有利弊，如果使用模板将更符合数学的直觉——矩阵应该是不能随意改变形状的，并且许多行数和列数的匹配问题（比如矩阵乘法的行列匹配关系）可以在编译时发现；而不用模板的话可以更轻松地实现 <code>reshape</code> 的操作，并且可以更方便隐藏源代码。我所采用的是模板类的方式，在编码风格上模仿了<code>STL</code>。</p>
 <p>为了方便管理，我们使用一维数组存储数据并提供 <code>at</code> 方法访问。为了应对不同的需求，诸如是否下标检查，是否 <code>const</code> 访问，提供四种 <code>at</code> 方法。为了防止堆栈空间不足而溢出，我们将其动态分配在堆上。<br>此外还可以提供迭代器以供快速迭代。<br>实现基本四则运算以及矩阵乘法，实现基本操作如转置，大多以操作符重载的形式实现。<br>此外还有一些杂乱的功能，例如适用于矩阵的函数，本例用到的其他矩阵操作等。</p>
-<p>以下为部分的代码。</p>
+<p>以下为全部代码。</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">pragma</span> once</span>
 
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
@@ -407,7 +407,7 @@
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fstream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;thread></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;math.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
 
 <span class="token keyword">namespace</span> la <span class="token punctuation">{</span>
     <span class="token keyword">template</span><span class="token operator">&lt;</span>size_t _M<span class="token punctuation">,</span> size_t _N<span class="token punctuation">,</span> <span class="token keyword">typename</span> _Ty <span class="token operator">=</span> <span class="token keyword">double</span><span class="token operator">></span>
