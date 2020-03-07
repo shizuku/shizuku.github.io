@@ -3,19 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: '零露瀼瀼'
-subtitle: '零露的博客'
-description: '野有蔓草，零露漙兮。有美一人，清扬婉兮。邂逅相遇，适我愿兮。野有蔓草，零露瀼瀼。有美一人，婉如清扬。邂逅相遇，与子偕臧。'
+title: "零露瀼瀼"
+subtitle: "零露的博客"
+description: "野有蔓草，零露漙兮。有美一人，清扬婉兮。邂逅相遇，适我愿兮。野有蔓草，零露瀼瀼。有美一人，婉如清扬。邂逅相遇，与子偕臧。"
 keywords: Android C++ Java
 author: 零露
 language: zh-CN
-timezone: 'Asia/Shanghai'
+timezone: "Asia/Shanghai"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://shizuku.github.io
 root: /
-permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink.html
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -38,7 +38,7 @@ titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
-  exclude: ''
+  exclude: ""
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -49,14 +49,14 @@ highlight:
   enable: false
   line_number: true
   auto_detect: false
-  tab_replace: ''
+  tab_replace: ""
   wrap: true
   hljs: false
 
 prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: true    # default false
+  mode: "preprocess" # realtime/preprocess
+  theme: "tomorrow"
+  line_number: true # default false
   custom_css: #/css/prism-shades-of-purple.css
 
 # Home page setting
@@ -64,7 +64,7 @@ prism_plugin:
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: ""
   per_page: 10
   order_by: -date
 
@@ -108,13 +108,13 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   - type: git
-    repo: 
+    repo:
       github: https://github.com/shizuku/shizuku.github.io.git
     branch: master
 
 lazyload:
-  enable: true 
-  onlypost: false  # 是否只对文章的图片做懒加载
+  enable: true
+  onlypost: true # 是否只对文章的图片做懒加载
   loadingImg: /images/loading.gif
 
 search:
@@ -128,5 +128,10 @@ feed:
   hub:
   content:
   content_limit: 140
-  content_limit_delim: ' '
+  content_limit_delim: " "
   order_by: -date
+
+# hexo-abbrlink config 、固定文章地址插件
+abbrlink:
+  alg: crc32 #算法选项：crc16、crc32，区别见之前的文章，这里默认为crc16丨crc32比crc16复杂一点，长一点
+  rep: dec #输出进制：十进制和十六进制，默认为10进制。丨dec为十进制，hex为十六进制
